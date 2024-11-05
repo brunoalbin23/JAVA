@@ -4,9 +4,11 @@ public class Main {
     public static void main(String[] args) {
 
         Tablero tablero = new Tablero(20,10);
+        String[] palabras = {"LLLLL"};
 
-        String[] palabras = {"HHHHHH"};
-        tablero.pintarTablero(palabras);
+        tablero.crearTablero();
+        tablero.agregarPalabrasAlTablero(palabras);
+        tablero.pintarTablero();
     }
 }
 
