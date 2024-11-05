@@ -39,14 +39,16 @@ public class Tablero {
         for (String i : palabras){
 
             char[] letras = i.toCharArray();
-            int direccion = 1;  //random.nextInt(8)+1;
+            int direccion = random.nextInt(8)+1;
             int largoPalabra = i.length();
-            int coordenadaX = 4; // random.nextInt(largo)-1;
-            int coordenadaY = 4; // random.nextInt(ancho)-1;
+            int coordenadaY;
+            int coordenadaX;
             int count = 0;
 
             switch (direccion){
                 case 1:
+                    coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                    coordenadaX = random.nextInt(ancho);
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -54,6 +56,8 @@ public class Tablero {
                     }
                     break;
                 case 2:
+                    coordenadaY = random.nextInt(largo-largoPalabra);
+                    coordenadaX = random.nextInt(ancho);
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -61,6 +65,8 @@ public class Tablero {
                     }
                     break;
                 case 3:
+                    coordenadaY = random.nextInt(largo);
+                    coordenadaX = random.nextInt(ancho-largoPalabra);
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -68,6 +74,8 @@ public class Tablero {
                     }
                     break;
                 case 4:
+                    coordenadaY = random.nextInt(largo);
+                    coordenadaX = random.nextInt(ancho-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -75,6 +83,8 @@ public class Tablero {
                     }
                     break;
                 case 5:
+                    coordenadaY = random.nextInt(largo-largoPalabra);
+                    coordenadaX = random.nextInt(ancho-largoPalabra);
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -83,6 +93,8 @@ public class Tablero {
                     }
                     break;
                 case 6:
+                    coordenadaX = random.nextInt(ancho-largoPalabra);
+                    coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -91,6 +103,8 @@ public class Tablero {
                     }
                     break;
                 case 7:
+                    coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                    coordenadaX = random.nextInt(ancho-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
@@ -99,6 +113,8 @@ public class Tablero {
                     }
                     break;
                 case 8:
+                    coordenadaY = random.nextInt(largo-largoPalabra);
+                    coordenadaX = random.nextInt(ancho-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
                         count++;
