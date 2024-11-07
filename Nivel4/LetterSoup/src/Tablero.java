@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Tablero {
@@ -26,6 +27,15 @@ public class Tablero {
     }
 
     public void pintarTablero(){
+        for(int i = 0; i<largo; i++) {
+            for (int j = 0; j < ancho; j++) {
+                System.out.print("["+array[i][j]+"]");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean estaLibre(int num1, int num2){
         for(int i = 0; i<largo; i++) {
             for (int j = 0; j < ancho; j++) {
                 System.out.print("["+array[i][j]+"]");
@@ -128,3 +138,4 @@ public class Tablero {
         }
     }
 }
+// Probando push
