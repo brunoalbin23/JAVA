@@ -22,6 +22,7 @@ public class Tablero {
                 int ascciLetra = random.nextInt(26) + 65;
                 char valor = (char) ascciLetra;
                 array[i][j] = valor;
+                arrayPalabrasOcupadas[i][j] = false;
             }
         }
     }
@@ -38,10 +39,12 @@ public class Tablero {
     public boolean estaLibre(int num1, int num2){
         for(int i = 0; i<largo; i++) {
             for (int j = 0; j < ancho; j++) {
-                System.out.print("["+array[i][j]+"]");
+                if (arrayPalabrasOcupadas[i][j]){
+                    return false;
+                }
             }
-            System.out.println();
         }
+        return true;
     }
 
     public void agregarPalabrasAlTablero(String[] palabras){
@@ -54,13 +57,28 @@ public class Tablero {
             int coordenadaY;
             int coordenadaX;
             int count = 0;
+            boolean ubicacionLibre = false;
 
             switch (direccion){
                 case 1:
                     coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
                     coordenadaX = random.nextInt(ancho);
+
+                    // hacer q este while cheque que no estan ocupadas las casillas, si estan, que cree nuevas cordenadas, repeetir para cada caso
+                    while (true){
+                        for (int j = 0; j<i.length(); j++){
+                            if (arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true){
+                                coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                                coordenadaX = random.nextInt(ancho);
+                                break;
+                            }
+                            coordenadaY--;
+                        }
+                    }
+
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaY--;
                     }
@@ -68,8 +86,25 @@ public class Tablero {
                 case 2:
                     coordenadaY = random.nextInt(largo-largoPalabra);
                     coordenadaX = random.nextInt(ancho);
+
+                    while (true){
+                        for (int j = 0; j<i.length(); j++){
+                            if (arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true){
+                                coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                                coordenadaX = random.nextInt(ancho);
+                                nuevasCordenadas = true;
+                                break;
+                            }
+                            coordenadaY++;
+                        }
+                        if (!nuevasCordenadas){
+                            break;
+                        }
+                    }
+
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaY++;
                     }
@@ -77,8 +112,25 @@ public class Tablero {
                 case 3:
                     coordenadaY = random.nextInt(largo);
                     coordenadaX = random.nextInt(ancho-largoPalabra);
+
+                    while (true){
+                        for (int j = 0; j<i.length(); j++){
+                            if (arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true){
+                                coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                                coordenadaX = random.nextInt(ancho);
+                                nuevasCordenadas = true;
+                                break;
+                            }
+                            coordenadaX++;
+                        }
+                        if (!nuevasCordenadas){
+                            break;
+                        }
+                    }
+
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaX++;
                     }
@@ -86,8 +138,25 @@ public class Tablero {
                 case 4:
                     coordenadaY = random.nextInt(largo);
                     coordenadaX = random.nextInt(ancho-largoPalabra)+largoPalabra-1;
+
+                    while (true){
+                        for (int j = 0; j<i.length(); j++){
+                            if (arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true){
+                                coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                                coordenadaX = random.nextInt(ancho);
+                                nuevasCordenadas = true;
+                                break;
+                            }
+                            coordenadaX--;
+                        }
+                        if (!nuevasCordenadas){
+                            break;
+                        }
+                    }
+
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaX--;
                     }
@@ -95,8 +164,26 @@ public class Tablero {
                 case 5:
                     coordenadaY = random.nextInt(largo-largoPalabra);
                     coordenadaX = random.nextInt(ancho-largoPalabra);
+
+                    while (true){
+                        for (int j = 0; j<i.length(); j++){
+                            if (arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true){
+                                coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
+                                coordenadaX = random.nextInt(ancho);
+                                nuevasCordenadas = true;
+                                break;
+                            }
+                            coordenadaX++;
+                            coordenadaY++;
+                        }
+                        if (!nuevasCordenadas){
+                            break;
+                        }
+                    }
+
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaX++;
                         coordenadaY++;
@@ -107,6 +194,7 @@ public class Tablero {
                     coordenadaY = random.nextInt(largo-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaX++;
                         coordenadaY--;
@@ -117,6 +205,7 @@ public class Tablero {
                     coordenadaX = random.nextInt(ancho-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaX--;
                         coordenadaY--;
@@ -127,6 +216,7 @@ public class Tablero {
                     coordenadaX = random.nextInt(ancho-largoPalabra)+largoPalabra-1;
                     for (int j = 0; j<i.length(); j++){
                         array[coordenadaY][coordenadaX] = letras[count];
+                        arrayPalabrasOcupadas[coordenadaY][coordenadaX] = true;
                         count++;
                         coordenadaX--;
                         coordenadaY++;
