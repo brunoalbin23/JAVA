@@ -36,47 +36,53 @@ public class Tablero{
         int contador = 0;
         while (!hayGanador()){
             System.out.print("Ingrese la posición x: ");
-            int x = scanner.nextInt(); // Esto aca no anda, cambiar el metodo para hacer la llamada con un while desde el main y asi usar el scanner solo desde la main, no se si es eso el problema pero queda mejor estrucuturado
+            int x = scanner.nextInt()-1;
             System.out.print("Ingrese la posición y: ");
-            int y = scanner.nextInt();
+            int y = scanner.nextInt()-1;
 
             contador++;
 
             if (tablero[x][y]==1){
                 tablero[x][y]=0;
-            } else {
+            } else if (tablero[x][y]==0) {
                 tablero[x][y]=1;
             }
 
             if (existeArriba(x,y)){
-                tablero[x-1][y]=0;
-            } else {
-                tablero[x-1][y]=1;
+                if (tablero[x-1][y]==1){
+                    tablero[x-1][y]=0;
+                } else {
+                    tablero[x-1][y]=1;
+                }
             }
 
             if (existeAbajo(x,y)){
-                tablero[x+1][y]=0;
-            } else {
-                tablero[x+1][y]=1;
+                if (tablero[x+1][y]==1){
+                    tablero[x+1][y]=0;
+                } else {
+                    tablero[x+1][y]=1;
+                }
             }
 
             if (existeDerecha(x,y)){
-                tablero[x][y+1]=0;
-            } else {
-                tablero[x][y+1]=1;
+                if (tablero[x][y+1]==1){
+                    tablero[x][y+1]=0;
+                } else {
+                    tablero[x][y+1]=1;
+                }
             }
 
             if (existeIzq(x,y)){
-                tablero[x][y-1]=0;
-            } else {
-                tablero[x][y-1]=1;
+                if (tablero[x][y-1]==1){
+                    tablero[x][y-1]=0;
+                } else {
+                    tablero[x][y-1]=1;
+                }
             }
 
             pintarTablero();
         }
         System.out.println("---------------GANASTE---------------\n LO HICISTE EN "+contador+" intentos");
-        pintarTablero();
-        System.out.println("-------------------------------------");
     }
 
     public boolean hayGanador() {
@@ -95,11 +101,11 @@ public class Tablero{
     }
 
     public boolean existeAbajo(int x, int y){
-        return x < tamano;
+        return x < tamano-1;
     }
 
     public boolean existeDerecha(int x, int y){
-        return y < tamano;
+        return y < tamano-1;
     }
 
     public boolean existeIzq(int x, int y){

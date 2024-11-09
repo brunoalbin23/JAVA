@@ -7,7 +7,6 @@ public class Main {
         System.out.print("Ingrese el tamaño NxN del tablero, n = ");
         int tamanio = scanner.nextInt();
         scanner.nextLine();
-        scanner.close();
 
         Tablero tablero = new Tablero(tamanio);
         tablero.crearTablero();
