@@ -6,11 +6,13 @@ public class Main {
         Tablero tablero = new Tablero(20,10);
 
         //No se pueden agreagar palabras mas grandes que el ancho o largo del tablero
-        String[] palabras = {"XXXXXXZZ","XXXXXXOO","XXXXXPP","XXXXRR"};
+        String[] palabras = {"BALLENA","LOBO","ZEBRA","MONO","JIRAFA","ELEFANTE","TIGRE","PANTERA"};
+        String pista = "Animales Salvajes";
 
         tablero.crearTablero();
         tablero.agregarPalabrasAlTablero(palabras);
-        tablero.pintarTablero();
+
+        tablero.jugar(pista);
     }
 }
 
