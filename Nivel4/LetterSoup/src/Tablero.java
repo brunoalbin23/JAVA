@@ -31,7 +31,6 @@ public class Tablero {
 
     public void pintarTablero(String pista) {
         if (encontradas.isEmpty()) {
-            // Si no hay palabras encontradas, imprimir el tablero completo con paréntesis rectos
             for (int i = 0; i < largo; i++) {
                 for (int j = 0; j < ancho; j++) {
                     System.out.print("[" + array[i][j] + "]");
@@ -42,20 +41,17 @@ public class Tablero {
             return;  // Terminar la ejecución
         }
 
-        // Crear una lista para almacenar todas las coordenadas de letras de palabras encontradas
         ArrayList<Integer[]> coordenadasEncontradas = new ArrayList<>();
 
-        // Recopilar todas las coordenadas de las letras de cada palabra encontrada
         for (String palabra : encontradas) {
             coordenadasEncontradas.addAll(coordenadasPalabras.get(palabra));
         }
 
-        // Imprimir el tablero completo una sola vez
         for (int x = 0; x < largo; x++) {
             for (int w = 0; w < ancho; w++) {
                 boolean esLetraEncontrada = false;
 
-                // Verificar si la posición actual (x, w) está en las coordenadas de letras encontradas
+
                 for (Integer[] coordenada : coordenadasEncontradas) {
                     if (coordenada[0] == x && coordenada[1] == w) {
                         System.out.print("(" + array[x][w] + ")");
@@ -64,7 +60,7 @@ public class Tablero {
                     }
                 }
 
-                // Si no es una letra encontrada, imprimir con paréntesis rectos
+
                 if (!esLetraEncontrada) {
                     System.out.print("[" + array[x][w] + "]");
                 }
