@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Tablero {
 
@@ -11,6 +8,7 @@ public class Tablero {
     Boolean[][] arrayPalabrasOcupadas;
     String[] palabras;
     HashMap <String, ArrayList<Integer[]>> coordenadasPalabras;
+    ArrayList<String> encontradas = new ArrayList<>();
 
     public Tablero(int ancho, int largo) {
         this.ancho = ancho;
@@ -31,15 +29,51 @@ public class Tablero {
         }
     }
 
-    public void pintarTablero(String pista){
-        for(int i = 0; i<largo; i++) {
-            for (int j = 0; j < ancho; j++) {
-                System.out.print("["+array[i][j]+"]");
+    public void pintarTablero(String pista) {
+        if (encontradas.isEmpty()) {
+            // Si no hay palabras encontradas, imprimir el tablero completo con paréntesis rectos
+            for (int i = 0; i < largo; i++) {
+                for (int j = 0; j < ancho; j++) {
+                    System.out.print("[" + array[i][j] + "]");
+                }
+                System.out.println();
+            }
+            System.out.println("\nPista: " + pista);
+            return;  // Terminar la ejecución
+        }
+
+        // Crear una lista para almacenar todas las coordenadas de letras de palabras encontradas
+        ArrayList<Integer[]> coordenadasEncontradas = new ArrayList<>();
+
+        // Recopilar todas las coordenadas de las letras de cada palabra encontrada
+        for (String palabra : encontradas) {
+            coordenadasEncontradas.addAll(coordenadasPalabras.get(palabra));
+        }
+
+        // Imprimir el tablero completo una sola vez
+        for (int x = 0; x < largo; x++) {
+            for (int w = 0; w < ancho; w++) {
+                boolean esLetraEncontrada = false;
+
+                // Verificar si la posición actual (x, w) está en las coordenadas de letras encontradas
+                for (Integer[] coordenada : coordenadasEncontradas) {
+                    if (coordenada[0] == x && coordenada[1] == w) {
+                        System.out.print("(" + array[x][w] + ")");
+                        esLetraEncontrada = true;
+                        break;
+                    }
+                }
+
+                // Si no es una letra encontrada, imprimir con paréntesis rectos
+                if (!esLetraEncontrada) {
+                    System.out.print("[" + array[x][w] + "]");
+                }
             }
             System.out.println();
         }
-        System.out.println("\nPista: "+pista);
+        System.out.println("\nPista: " + pista);
     }
+
 
     public void jugar(String pista){
 
@@ -47,12 +81,11 @@ public class Tablero {
         int palabrasRestantes = palabras.length;
         Scanner scanner = new Scanner(System.in);
         String intento;
-        ArrayList<String> encontradas = new ArrayList<>();
 
         while(aciertos!=palabras.length){
             pintarTablero(pista);
-            System.out.println("------Palabras restantes : "+palabrasRestantes+"-------\nIngrese su palabra: ");
-            intento = scanner.nextLine();
+            System.out.println("------ Palabras restantes : "+palabrasRestantes+" -------\nIngrese su palabra: ");
+            intento = scanner.nextLine().toUpperCase();
             for (String i : palabras){
                 if (i.equals(intento) && !encontradas.contains(intento)) {
                     encontradas.add(intento);
@@ -61,7 +94,8 @@ public class Tablero {
                 }
             }
         }
-
+        pintarTablero(" ");
+        System.out.println("--------------ENCONTRASTE TODAS LAS PALABRAS--------------");
     }
 
     public void agregarPalabrasAlTablero(String[] palabras){
@@ -82,7 +116,6 @@ public class Tablero {
             boolean denuevo = true;
 
             ArrayList<Integer[]> coordenadasPalabra = new ArrayList<Integer[]>();
-            Integer[] coordenadasCaracter = new Integer[2];
 
             switch (direccion){
                 case 1:
@@ -113,6 +146,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -148,6 +182,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -183,6 +218,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -218,6 +254,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -254,6 +291,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -291,6 +329,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -328,6 +367,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
@@ -365,6 +405,7 @@ public class Tablero {
                     for (int j = 0; j<i.length(); j++){
                         array[copiaY][copiaX] = letras[count];
                         arrayPalabrasOcupadas[copiaY][copiaX] = true;
+                        Integer[] coordenadasCaracter = new Integer[2];
                         coordenadasCaracter[0] = copiaY;
                         coordenadasCaracter[1] = copiaX;
                         coordenadasPalabra.add(coordenadasCaracter);
