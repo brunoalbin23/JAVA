@@ -5,7 +5,7 @@ public class Main {
 
         /*
         La idea de este ejercicio es hacer una gestion en la cual los empleados tengan distintas responsabilidades
-        los empleados van a ser, gerente, lider y desarrollador (si no me esforcé mucho) cada uno de estos va a
+        los empleados van a ser, gerente, desarrollador sr y jr (si no me esforcé mucho) cada uno de estos va a
         tener metodos unicos y en comun.
         Luego va a haber una gestión que se va a encargar de registrar, eliminar, buscar y actualiar datos
          */

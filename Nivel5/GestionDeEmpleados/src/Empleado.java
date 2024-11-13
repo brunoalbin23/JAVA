@@ -5,6 +5,7 @@ public class Empleado {
     private String correo;
     private String direccion;
     private int salario;
+    private String puesto;
 
     public int getCedula() {
         return cedula;
@@ -37,6 +38,11 @@ public class Empleado {
     public void setSalario(int salario) {
         this.salario = salario;
     }
+
+    public String getPuesto() {
+        return puesto;
+    }
+
 
     public Empleado(int cedula, String nombre, String correo, String direccion, int salario) {
         this.cedula = cedula;
