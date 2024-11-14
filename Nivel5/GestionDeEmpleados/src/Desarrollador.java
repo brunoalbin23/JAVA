@@ -25,7 +25,41 @@ public class Desarrollador extends Empleado{
         }
     }
 
-    public void hacerTarea(Tarea tarea, int porcentaje){
-        tarea.sumarPorcentaje(porcentaje);
+    public void hacerTarea(int idTarea, int porcentaje){
+        for (Tarea i : tareasPendientes){
+            if (i.getId() == idTarea){
+                i.sumarPorcentaje(porcentaje);
+                if (i.estaCompletada()){
+                    tareasPendientes.remove(i);
+                    tareasTerminadas.add(i);
+                }
+            }
+        }
+    }
+
+    public void verTareasPendientes(){
+        if (tareasPendientes.isEmpty()){
+            System.out.println("El desarrollador no tiene tareas pendientes asignadas");
+        } else {
+            System.out.println("Tareas pendientes:");
+            for (Tarea i : tareasPendientes){
+                System.out.println("Id: "+i.getId()+" - Nombre: "+i.getNombre()+"\nDescricpión: "+i.getDescripcion()+"\nPorcentaje terminado: "+i.getPorcentaje()+" - Lenguaje: "+i.getLenguaje());
+            }
+        }
+    }
+
+    public void verTareasTerminadas(){
+        if (tareasTerminadas.isEmpty()){
+            System.out.println("El desarrollador no tiene tareas terminadas aún");
+        } else {
+            System.out.println("Tareas terminadas:");
+            for (Tarea i : tareasTerminadas){
+                System.out.println("Id: "+i.getId()+" - Nombre: "+i.getNombre()+"\nDescricpión: "+i.getDescripcion()+"\nPorcentaje terminado: "+i.getPorcentaje()+" - Lenguaje: "+i.getLenguaje());
+            }
+        }
+    }
+
+    public void tareaNueva(Tarea tarea){
+        tareasPendientes.add(tarea);
     }
 }

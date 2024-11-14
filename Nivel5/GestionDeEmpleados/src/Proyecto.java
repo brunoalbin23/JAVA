@@ -7,6 +7,7 @@ public class Proyecto {
     private String descripcion;
     private int dinero;
     private String fechaEntrega;
+
     private ArrayList<Equipo> equipos;
 
     public String getNombre() {

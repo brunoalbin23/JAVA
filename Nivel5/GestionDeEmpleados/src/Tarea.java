@@ -2,16 +2,26 @@ public class Tarea {
 
     private String nombre;
     private int id;
+    private String descripcion;
     private int porcentaje;
     private boolean completada;
     private String lenguaje;
 
-    public Tarea(String nombre, int id, String lenguaje) {
+    public Tarea(String nombre, int id, String descripcion, String lenguaje) {
         this.nombre = nombre;
         this.id = id;
+        this.descripcion = descripcion;
         this.completada = false;
         this.porcentaje = 0;
         this.lenguaje = lenguaje;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
@@ -55,7 +65,7 @@ public class Tarea {
         this.lenguaje = lenguaje;
     }
 
-    public boolean isCompletada() {
+    public boolean estaCompletada() {
         return completada;
     }
 

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class DesarrolladorSenior extends Empleado{
 
     private ArrayList<Proyecto> proyectos;
+    private ArrayList<Desarrollador> desarrolladoresAlMando;
     private int presupuesto;
     private int bonoAnual;
 
@@ -10,8 +11,8 @@ public class DesarrolladorSenior extends Empleado{
         super(cedula, nombre, correo, direccion, salario);
     }
 
-    public Tarea crearTarea(String nombre, int id, String lenguaje){
-        return new Tarea(nombre, id, lenguaje);
+    public Tarea crearTarea(String nombre, int id, String descripcion, String lenguaje){
+        return new Tarea(nombre, id, descripcion, lenguaje);
     }
 
     public void asignarTarea(int cedula, Tarea tarea){

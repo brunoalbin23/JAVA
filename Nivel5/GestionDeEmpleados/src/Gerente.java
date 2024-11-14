@@ -10,6 +10,8 @@ public class Gerente extends Empleado{
         super(cedula, nombre, correo, direccion, salario);
     }
 
-    public void asignarEmpleado()
+    public void asignarEmpleado(){
+
+    }
 
 }
