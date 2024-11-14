@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Proyecto {
@@ -7,7 +6,7 @@ public class Proyecto {
     private int id;
     private String descripcion;
     private int dinero;
-    private LocalDate fechaEntrega;
+    private String fechaEntrega;
     private ArrayList<Equipo> equipos;
 
     public String getNombre() {
@@ -42,11 +41,11 @@ public class Proyecto {
         this.dinero += dinero;
     }
 
-    public LocalDate getFechaEntrega() {
+    public String getFechaEntrega() {
         return fechaEntrega;
     }
 
-    public void setFechaEntrega(LocalDate fechaEntrega) {
+    public void setFechaEntrega(String fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
     }
 
@@ -58,15 +57,11 @@ public class Proyecto {
         this.equipos = equipos;
     }
 
-    public Proyecto(String nombre, int id, String descripcion, int dinero, LocalDate fechaEntrega) {
+    public Proyecto(String nombre, int id, String descripcion, int dinero, String fechaEntrega) {
         this.nombre = nombre;
         this.id = id;
         this.descripcion = descripcion;
         this.dinero = dinero;
         this.fechaEntrega = fechaEntrega;
-    }
-
-    public void agregarEquipo(Equipo equipo){
-        equipos.add(equipo);
     }
 }

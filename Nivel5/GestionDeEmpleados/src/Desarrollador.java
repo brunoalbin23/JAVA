@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Desarrollador extends Empleado{
 
+    private ArrayList<Tarea> tareasPendientes;
+    private ArrayList<Tarea> tareasTerminadas;
     private ArrayList<String> lenguajes;
     private int nivelHabilidad;
     private int bonoAnual;
@@ -21,5 +23,9 @@ public class Desarrollador extends Empleado{
         } else {
             System.out.println("EL desarrollador ya tiene un nivel 10 de habilidad!");
         }
+    }
+
+    public void hacerTarea(Tarea tarea, int porcentaje){
+        tarea.sumarPorcentaje(porcentaje);
     }
 }

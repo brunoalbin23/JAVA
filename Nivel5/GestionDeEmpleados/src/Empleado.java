@@ -43,7 +43,6 @@ public class Empleado {
         return puesto;
     }
 
-
     public Empleado(int cedula, String nombre, String correo, String direccion, int salario) {
         this.cedula = cedula;
         this.nombre = nombre;

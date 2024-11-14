@@ -10,11 +10,15 @@ public class DesarrolladorSenior extends Empleado{
         super(cedula, nombre, correo, direccion, salario);
     }
 
-    public void crearTarea(){
-
+    public Tarea crearTarea(String nombre, int id, String lenguaje){
+        return new Tarea(nombre, id, lenguaje);
     }
 
-    public void asignarTarea(Desarrollador desarrollador, Tarea tarea){
+    public void asignarTarea(int cedula, Tarea tarea){
+        // como mierda hago esto
+    }
 
+    public void programar(int idTarea, int porcentaje){
+        // COmo hago estoooooo ajsdnk
     }
 }

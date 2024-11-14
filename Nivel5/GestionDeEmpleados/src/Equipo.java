@@ -5,6 +5,7 @@ public class Equipo {
     private String nombre;
     private int id;
     private String descripcion;
+    private ArrayList<Tarea> tareas;
 
     private ArrayList<DesarrolladorSenior> desarrolladoresSr;
     private ArrayList<Desarrollador> desarrolladoresJr;

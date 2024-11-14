@@ -4,6 +4,15 @@ public class Tarea {
     private int id;
     private int porcentaje;
     private boolean completada;
+    private String lenguaje;
+
+    public Tarea(String nombre, int id, String lenguaje) {
+        this.nombre = nombre;
+        this.id = id;
+        this.completada = false;
+        this.porcentaje = 0;
+        this.lenguaje = lenguaje;
+    }
 
     public String getNombre() {
         return nombre;
@@ -21,18 +30,36 @@ public class Tarea {
         this.id = id;
     }
 
+    public int getPorcentaje() {
+        return porcentaje;
+    }
+
+    public void setPorcentaje(int porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+
+    public void sumarPorcentaje(int porcentaje) {
+        if (this.porcentaje + porcentaje >= 100){
+            this.porcentaje = 100;
+            setCompletada(true);
+        } else {
+            this.porcentaje += porcentaje;
+        }
+    }
+
+    public String getLenguaje() {
+        return lenguaje;
+    }
+
+    public void setLenguaje(String lenguaje) {
+        this.lenguaje = lenguaje;
+    }
+
     public boolean isCompletada() {
         return completada;
     }
 
     public void setCompletada(boolean completada) {
         this.completada = completada;
-    }
-
-    public Tarea(String nombre, int id, boolean completada) {
-        this.nombre = nombre;
-        this.id = id;
-        this.completada = completada;
-        this.porcentaje = 0;
     }
 }

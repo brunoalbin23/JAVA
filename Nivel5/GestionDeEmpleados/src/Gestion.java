@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Gestion {
@@ -31,4 +32,10 @@ public class Gestion {
             }
         }
     }
+
+    public Proyecto crearProyecto(String nombre, int id, String descripcion, int dinero, String fechaEntrega){
+        return new Proyecto(nombre, id, descripcion, dinero, fechaEntrega);
+    }
+
+
 }
