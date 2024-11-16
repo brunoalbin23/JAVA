@@ -22,4 +22,8 @@ public class DesarrolladorSenior extends Empleado{
     public void programar(int idTarea, int porcentaje){
         // COmo hago estoooooo ajsdnk
     }
+
+    public void nuevoDesarrollador(Desarrollador desarrollador){
+        desarrolladoresAlMando.add(desarrollador)
+    }
 }
