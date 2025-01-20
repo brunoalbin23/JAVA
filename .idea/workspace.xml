@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7bfdcc32-c931-44c5-9153-ef67de56106b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/GestionDeEmpleados.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionDeEmpleados/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nivel2/NivelDos/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nivel2/NivelDos/src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2ruHbCSsor67pphuvspOUEbUEYB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bfdcc32-c931-44c5-9153-ef67de56106b" name="Changes" comment="" />
+      <created>1737402110264</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737402110264</updated>
+    </task>
+    <servers />
+  </component>
+</project>
